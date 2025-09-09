@@ -1,0 +1,39 @@
+// Description : Write a genric program which accept N values from user and return largest value amongst of that N values.
+
+#include<iostream>
+using namespace std;
+
+template<class T>
+
+T Max(T *Arr , int iSize)
+{
+    T Max  = 0;
+    int i = 0;
+    if(iSize < 0)
+    {
+        printf("Invalid Input!!!");
+        return -1;
+    }    
+    Max = Arr[0];
+    for(i = 0; i< iSize; i++)
+    {
+        if(Arr[i] > Max)
+        {
+            Max = Arr[i];
+        }
+    }
+    return Max;
+}
+int main()
+{
+    int iRet = 0;
+    double dRet = 0.0; 
+    int Arr[] = {10,20,30,40,50,60};
+    double Brr[] = {10.23,20.36,62.35,89.21};
+
+    iRet = Max(Arr , 6);
+    cout<<"Maximum is : "<<iRet<<"\n";
+    dRet = Max(Brr , 4);
+    cout<<"Maximum is : "<<dRet<<"\n";
+    
+}
