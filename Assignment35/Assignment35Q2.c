@@ -21,17 +21,13 @@ void DisplayPrime(PNODE first)
 
     while (temp != NULL)
     {
-        // 11 20 17 41 22 89 
-        for(iCnt = 2; iCnt <= temp->data  ; iCnt++)
+        for(iCnt = 2; iCnt <= (temp->data / 2)  ; iCnt++)
         {
-            if((temp->data) % iCnt == 0)
-            {
-                break;
-            }
-            if(iCnt == (temp->data / 2) + 1)
+            if((temp->data) % iCnt != 0)
             {
                 printf("%d\t",temp->data);
             }
+            break;
         }
         temp = temp->next;
     }
@@ -87,4 +83,5 @@ int main()
     DisplayPrime(head);
 
     return 0;
+
 }
